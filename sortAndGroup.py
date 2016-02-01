@@ -27,7 +27,8 @@ table = data.sheets()[0]
 stu_count = table.nrows - 1
 for i in range(1, table.nrows):
     row = table.row_values(i)
-    stuname_set.add(row[6])
+    # encode to utf-8 before add to set
+    stuname_set.add(unicode(row[6]).encode('utf-8'))
 
 
 # process log files: count consumer numbers and collect names and ID
@@ -50,12 +51,17 @@ print "combine name count: " + str(len(name_combine_set))
 
 profile_names = open(data_src+"profile_names.txt", 'w')
 log_names = open(data_src+ "log_names.txt", 'w')
+combine_names = open(data_src+ "combine_names.txt", 'w')
+
 
 for name in stuname_set:
     profile_names.write(str(name)+'\n')
 
 for name in username_set:
     log_names.write(str(name)+'\n')
+
+for name in name_combine_set:
+    combine_names.write(str(name)+'\n')
 # # count log numbers
 # for f in files:
 #     if f[0] not in exclude_list:
