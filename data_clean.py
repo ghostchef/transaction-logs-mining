@@ -1,9 +1,11 @@
 #-*- coding: utf-8 -*-
 import os
 
+data_src = "/Users/ghostchef/data/shcool-card-data/"
+
 for index in range(1, 10):
-    inputFileName = "/Users/ghostchef/workplace/python/GraduationThesis/logs/ykt_his_trade_20140" +str(index)+".txt"
-    outputFileName = "/Users/ghostchef/workplace/python/GraduationThesis/logs/cleaned_20140"+ str(index) + ".txt"
+    inputFileName = data_src + "original-logs/ykt_his_trade_20140" +str(index)+".txt"
+    outputFileName = data_src + "cleantest/cleaned_20140"+ str(index) + ".txt"
     inputFile = open(inputFileName, 'r')
     outputFile = open(outputFileName, 'w')
     iter_f = iter(inputFile)
