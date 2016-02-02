@@ -62,6 +62,8 @@ for name in username_set:
 
 for name in name_combine_set:
     combine_names.write(str(name)+'\n')
+
+
 # # count log numbers
 # for f in files:
 #     if f[0] not in exclude_list:
