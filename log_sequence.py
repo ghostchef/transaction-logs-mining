@@ -7,12 +7,10 @@ sys.setdefaultencoding( "utf-8" )
 
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 files = os.listdir(data_src + 'cleaned-logs/')
+sp_list = ["开水", "浴室"]
 
-shop_dict = {}
-pos_dict = {}
-shopName_set = set([])
-shopID_set = set([])
-posID_set = set([])
+group = dict()
+group_index = 1
 
 for file in files:
     if file[0] != '.':
@@ -20,27 +18,28 @@ for file in files:
         print "we are processing " + file
         for line in cur_file.readlines():
             record = line.split()
-            shopID_set.add(record[3])
-            posID_set.add(record[9])
-            shopName_set.add(record[4])
+            type = 0
 
-            if record[3] not in shop_dict:
-                shop_dict[record[3]] = record[4]
-            if record[3] not in pos_dict:
-                pos_dict[record[3]] = record[9]
+            for word in sp_list:
+                if word in record[4]:
+                    type = 1
+
+            if type == 1:
+                group_ID = record[3]
+            else:
+                group_ID = record[3] + '_' + record[9]
+
+            if group_ID in group:
+                group[group_ID].append(line)
+            else:
+                group[group_ID] = []
+                group[group_ID].append(line)
 
         cur_file.close()
 
-print "shopID counts: " + str(len(shopID_set))
-print "shopName counts: " + str(len(shopName_set))
-print "posID counts: " + str(len(posID_set))
-
-shop_dict_file = open(data_src+'shop-dict.txt', 'w')
-for d, x in shop_dict.items():
-    shop_dict_file.write(unicode(str(d) + ":" + str(x) + '\n').encode('utf-8'))
-shop_dict_file.close()
-
-pos_dict_file = open(data_src+'pos-dict.txt', 'w')
-for d, x in pos_dict.items():
-    pos_dict_file.write(unicode(str(d) + ":" + str(x) + '\n').encode('utf-8'))
-pos_dict_file.close()
+for id, sequence in group.iteritems():
+    outfile = open(data_src+"group/group_" + str(group_index) + ".txt", 'w')
+    group_index += 1
+    for log in sequence:
+        outfile.write(log)
+    outfile.close()
