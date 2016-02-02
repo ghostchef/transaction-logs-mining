@@ -46,9 +46,9 @@ for file in files:
 
 for id, sequence in group.iteritems():
     outfile = open(data_src+"group/group_" + str(group_index) + ".txt", 'w')
-    group_index += 1
     sorted_log = sorted(sequence, key=itemgetter(4))
 
     for log in sorted_log:
-        outfile.write(log[0] + ' ' + log[1] + ' '+ log[2] + ' ' + log[3] + ' ' + str(log[4]) + '\n')
+        outfile.write(log[0] + ' ' + log[1]  + ' ' + log[3] + ' ' + str(log[4]) + ' ' + str(group_index) + '\n' )
     outfile.close()
+    group_index += 1
