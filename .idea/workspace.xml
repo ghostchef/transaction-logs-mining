@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64eb50d8-2381-452b-9191-eab3551811e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coco_freq.py" afterPath="$PROJECT_DIR$/coco_freq.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cooc_weight.py" afterPath="$PROJECT_DIR$/cooc_weight.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_cooc.py" afterPath="$PROJECT_DIR$/extract_cooc.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thod_cooc_freq.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GraduationThesis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -680,14 +679,6 @@
           <folding>
             <element signature="e#59#90#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thod_cooc_freq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43589744">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
