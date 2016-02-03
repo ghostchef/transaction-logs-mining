@@ -1,10 +1,10 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # compute frequency of two user for all location
 
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 
 freq_dict = dict()
-file = open(data_src+'local-freq-all.txt', 'r')
+file = open(data_src + 'local-freq-all.txt', 'r')
 
 # count cooc frequency
 for line in file.readlines():
@@ -17,10 +17,14 @@ for line in file.readlines():
         freq_dict[tup] += freq
     else:
         freq_dict[tup] = freq
-
 file.close()
 
 # write co-occurrence frequency into file
-freq_file = open(data_src+'cooc-freq-all.txt', 'w')
+# threshold of co-occurrence, keep co-occurrence with frequency higher than threshold
+threshold = 3
+freq_file = open(data_src + 'cooc-freq-' + str(threshold) + '.txt', 'w')
 for k, v in freq_dict.iteritems():
-    freq_file.write( str(k) + ":" + str(v) +'\n')
+    if v >= threshold:
+        freq_file.write(str(k) + ":" + str(v) + '\n')
+
+freq_file.close()

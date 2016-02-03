@@ -25,32 +25,34 @@ for fi in files:
         file = open(data_src+'group/'+fi)
         log_list = file.readlines()
         time_gap_list = []
+        threshold = 600
 
         print "processing file: " + fi
 
-        # ignore group with only on transaction log
-        if len(log_list) > 1:
-            # compute the time co-occurrence threshold
-            for index in range(1, len(log_list)):
-                time_1 = int(log_list[index].split()[3])
-                time_2 = int(log_list[index-1].split()[3])
-                time_gap_list.append(abs(time_1 - time_2))
-            mid = median(time_gap_list)
+        # compute the time co-occurrence threshold
+        for index in range(1, len(log_list)):
+            time_1 = int(log_list[index].split()[3])
+            time_2 = int(log_list[index-1].split()[3])
+            time_gap_list.append(abs(time_1 - time_2))
+        mid = median(time_gap_list)
 
-            # extracting co-occurrence
-            for index in range(0, len(log_list) - 1):
-                temp_index = index + 1
-                while temp_index < len(log_list) and int(log_list[temp_index].split()[3]) - int(log_list[index].split()[3]) <= mid:
-                    if log_list[temp_index].split()[0] != log_list[index].split()[0]:
-                        co_oc = (log_list[temp_index].split()[0], log_list[index].split()[0], log_list[temp_index].split()[4])
-                        co_co = (log_list[index].split()[0], log_list[temp_index].split()[0], log_list[temp_index].split()[4])
-                        if cooc_dict.has_key(co_oc):
-                            cooc_dict[co_oc] += 1
-                            cooc_dict[co_co] += 1
-                        else:
-                            cooc_dict[co_oc] = 1
-                            cooc_dict[co_co] = 1
-                    temp_index += 1
+        if mid < threshold:
+            threshold = mid
+
+        # extracting co-occurrence
+        for index in range(0, len(log_list) - 1):
+            temp_index = index + 1
+            while temp_index < len(log_list) and int(log_list[temp_index].split()[3]) - int(log_list[index].split()[3]) <= threshold and int(log_list[temp_index].split()[3]) - int(log_list[index].split()[3]) > 0 :
+                if log_list[temp_index].split()[0] != log_list[index].split()[0]:
+                    co_oc = (log_list[temp_index].split()[0], log_list[index].split()[0], log_list[temp_index].split()[4])
+                    co_co = (log_list[index].split()[0], log_list[temp_index].split()[0], log_list[temp_index].split()[4])
+                    if cooc_dict.has_key(co_oc):
+                        cooc_dict[co_oc] += 1
+                        cooc_dict[co_co] += 1
+                    else:
+                        cooc_dict[co_oc] = 1
+                        cooc_dict[co_co] = 1
+                temp_index += 1
 
         file.close()
 
