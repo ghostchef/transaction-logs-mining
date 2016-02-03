@@ -5,7 +5,7 @@ from operator import itemgetter
 
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 files = os.listdir(data_src + 'cleaned-logs/')
-sp_list = ["开水", "浴室"]
+sp_list = ["开水", "浴室", "留学生公寓控电", "膳食管理费", "启东校区教工食堂"]
 
 group = dict()
 group_index = 1
@@ -41,10 +41,11 @@ for file in files:
         cur_file.close()
 
 for id, sequence in group.iteritems():
-    outfile = open(data_src+"group/group_" + str(group_index) + ".txt", 'w')
-    sorted_log = sorted(sequence, key=itemgetter(4))
+    if len(sequence) > 100:
+        outfile = open(data_src+"group/group_" + str(group_index) + ".txt", 'w')
+        sorted_log = sorted(sequence, key=itemgetter(4))
 
-    for log in sorted_log:
-        outfile.write(log[0] + ' ' + log[1]  + ' ' + log[3] + ' ' + str(log[4]) + ' ' + str(group_index) + '\n' )
-    outfile.close()
-    group_index += 1
+        for log in sorted_log:
+            outfile.write(log[0] + ' ' + log[1]  + ' ' + log[3] + ' ' + str(log[4]) + ' ' + str(group_index) + '\n' )
+        outfile.close()
+        group_index += 1
