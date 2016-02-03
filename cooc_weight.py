@@ -82,6 +82,8 @@ for k_1, v_1 in p_ul.iteritems():
         if k_1[1] == k_2[1]:
             w_uvl[(k_1[0], k_2[0], k_1[1])] = -1 * math.log(v_1 * v_2)
 
+print "personal weight finished"
+
 per_weight_file = open(data_src+'per_weight.txt', 'w')
 for k, v in w_uvl.iteritems():
     per_weight_file.write(str(k) + ':' + str(v) + '\n')
