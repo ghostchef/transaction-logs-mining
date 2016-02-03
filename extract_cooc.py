@@ -55,6 +55,7 @@ for fi in files:
 
         file.close()
 
+# write local co-occurrence frequency into file
 local_freq = open(data_src+'local-freq-all.txt', 'w')
 for k, v in cooc_dict.iteritems():
     local_freq.write( str(k) + ":" + str(v) +'\n')
