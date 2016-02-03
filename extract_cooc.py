@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*-
 # extracting co-occurrence from transaction log sequences.
 import os
-import sys
 
 def median(lst):
     if not lst:

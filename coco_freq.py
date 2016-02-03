@@ -1,6 +1,5 @@
 #-*- coding: utf-8 -*-
-# some test code for python feature
-import os
+# compute frequency of two user for all location
 
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 

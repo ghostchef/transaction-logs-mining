@@ -1,22 +1,24 @@
 #-*- coding: utf-8 -*-
 # some test code for python feature
+from __future__ import division
 import os
 import time
 
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 
+# true division by: from __future__ import division
+a=2/3
+print a
 
-# string parse
-line = "('111724', '111747', '303'):2"
-lst = line.split(':')
-info = eval(lst[0])
-freq = int(lst[1])
-
-print lst
-print info
-print freq
-
-
+# # string parse
+# line = "('111724', '111747', '303'):2"
+# lst = line.split(':')
+# info = eval(lst[0])
+# freq = int(lst[1])
+#
+# print lst
+# print info
+# print freq
 
 
 # # timestamp transfer

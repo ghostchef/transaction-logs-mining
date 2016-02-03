@@ -1,11 +1,7 @@
 #-*- coding: utf-8 -*-
 import os
-import sys
 import time
 from operator import itemgetter
-
-reload(sys)
-sys.setdefaultencoding( "utf-8" )
 
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 files = os.listdir(data_src + 'cleaned-logs/')
