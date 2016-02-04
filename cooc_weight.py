@@ -41,7 +41,7 @@ for fi in files:
             else:
                 v_u[record[0]] = 1
 
-#         # compute p_lu
+#         # compute p_lu: the probability of a location visited by a user among other users
 #         for user, times in v_ul.iteritems():
 #             if user[1] == loc:
 #                 p_lu[user] = times / v_l
@@ -66,24 +66,22 @@ for fi in files:
 #     nor_loc_weight_file.write(k+','+str(v)+'\n')
 
 
-# compute p_ul
-p_ul = dict()
-for user, times_u in v_u.iteritems():
-    print "we are computing p_ul for user: " + user
-    for ul, times_ul in v_ul.iteritems():
-        if ul[0] == user:
-            p_ul[ul] = times_ul / times_u
-
-print "p_ul finished"
-
-w_uvl = dict()
-for k_1, v_1 in p_ul.iteritems():
-    for k_2, v_2 in p_ul.iteritems():
-        if k_1[1] == k_2[1]:
-            w_uvl[(k_1[0], k_2[0], k_1[1])] = -1 * math.log(v_1 * v_2)
-
-print "personal weight finished"
-
-per_weight_file = open(data_src+'per_weight.txt', 'w')
-for k, v in w_uvl.iteritems():
-    per_weight_file.write(str(k) + ':' + str(v) + '\n')
+# # compute p_ul: the probability of a user visit a location among other location
+# p_ul = dict()
+# for user, times_u in v_u.iteritems():
+#     print "we are computing p_ul for user: " + user
+#     for ul, times_ul in v_ul.iteritems():
+#         if ul[0] == user:
+#             p_ul[ul] = times_ul / times_u
+#
+# # compute w_uvl: weigh of a co-occurrence of two user at a location, personal weight
+# w_uvl = dict()
+# for k_1, v_1 in p_ul.iteritems():
+#     for k_2, v_2 in p_ul.iteritems():
+#         if k_1[1] == k_2[1]:
+#             w_uvl[(k_1[0], k_2[0], k_1[1])] = -1 * math.log(v_1 * v_2)
+#
+# # write personal weight into file
+# per_weight_file = open(data_src+'per_weight.txt', 'w')
+# for k, v in w_uvl.iteritems():
+#     per_weight_file.write(str(k) + ':' + str(v) + '\n')
