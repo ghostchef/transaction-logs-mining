@@ -33,27 +33,10 @@ for k, v in v_u.iteritems():
     print str(k) + ":" + str(v) +"\n"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # # true division by: from __future__ import division
 # a=2/3
 # print a
+
 
 # # string parse
 # line = "('111724', '111747', '303'):2"
