@@ -33,6 +33,7 @@ local_freq_file.close()
 pul = open(data_src + 'cooc/pul.txt', 'r')
 local_freq = open(data_src + 'cooc/local-freq-3.txt', 'r')
 w_uvl = open(data_src + 'cooc/wuvl.txt', 'w')
+norm_wuvl = open(data_src + 'cooc/norm_wuvl.txt', 'w')
 pul_dict = dict()
 
 print "loading pul"
@@ -54,8 +55,9 @@ for line in local_freq.readlines():
         max_wuvl = w_uvl_v
     if w_uvl_v < min_wuvl:
         min_wuvl = w_uvl_v
+    norm_wuvl.write(str(info) + ":" + str(w_uvl_v/14.85) + '\n')
     w_uvl.write(str(info) + ":" + str(w_uvl_v)+"\n")
 w_uvl.close()
 local_freq.close()
-print max_wuvl
-print min_wuvl
+norm_wuvl.close()
+
