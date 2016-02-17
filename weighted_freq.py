@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-# compute the weight of a co-occurrence
+# compute the weighted frequency of each pair
 from __future__ import division
 import os
 import math
