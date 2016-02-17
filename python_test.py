@@ -7,30 +7,51 @@ import math
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 
 
-# compute personal weight: weight of a co-oc at location
-files = os.listdir(data_src + 'group/')
 
-v_u = dict() # count the total visit number of a user: {user : times}
-v_ul = dict() # count visit numbers of a user to a location
+# # user log count
+# count_dict = {100 : 0, 200 : 0, 300 : 0, 400 : 0, 500 : 0, 600 : 0, 700 : 0,
+#               800 : 0, 900 : 0, 1000 : 0, 1100 : 0, 1200 : 0, 1300 : 0, 1400 : 0, 1500 : 0,
+#               1600 : 0, 1700 : 0, 1800 : 0, 1900 : 0, 2000 : 0, 2100 : 0, 2200: 0,
+#               2300: 0, 2400: 0, 2500: 0,}
+#
+# file = open(data_src+'stuff/user_log_count.txt', 'r')
+# for line in file.readlines():
+#     info = line.split()
+#     count = int(info[1])
+#     for k, v in count_dict.iteritems():
+#         if k <= count:
+#             count_dict[k] += 1
+#
+# outfile = open(data_src+'stuff/user_log_count_2.txt', 'w')
+# for k, v in count_dict.iteritems():
+#     outfile.write((str(k) + ' ' + str(v) + '\n'))
+# outfile.close()
 
-for fi in files:
-    if fi[0] != '.':
-        print "we are processing: " + fi
-        file = open(data_src + 'group/' + fi)
-        loc = fi.split('.')[0][6:]
-        logs = file.readlines()
 
-        for log in logs:
-            record = log.split()
-
-            # count v_u
-            if v_u.has_key(record[0]):
-                v_u[record[0]] += 1
-            else:
-                v_u[record[0]] = 1
-        file.close()
-for k, v in v_u.iteritems():
-    print str(k) + ":" + str(v) +"\n"
+# # compute personal weight: weight of a co-oc at location
+# files = os.listdir(data_src + 'group/')
+#
+# v_u = dict() # count the total visit number of a user: {user : times}
+# v_ul = dict() # count visit numbers of a user to a location
+#
+# for fi in files:
+#     if fi[0] != '.':
+#         print "we are processing: " + fi
+#         file = open(data_src + 'group/' + fi)
+#         loc = fi.split('.')[0][6:]
+#         logs = file.readlines()
+#
+#         for log in logs:
+#             record = log.split()
+#
+#             # count v_u
+#             if v_u.has_key(record[0]):
+#                 v_u[record[0]] += 1
+#             else:
+#                 v_u[record[0]] = 1
+#         file.close()
+# for k, v in v_u.iteritems():
+#     print str(k) + ":" + str(v) +"\n"
 
 
 # # true division by: from __future__ import division
