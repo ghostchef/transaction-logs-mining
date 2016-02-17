@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64eb50d8-2381-452b-9191-eab3551811e8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cooc_coef.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cooc_diversity.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weighted_freq.py" afterPath="$PROJECT_DIR$/weighted_freq.py" />
     </list>
     <ignored path="GraduationThesis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,6 +25,7 @@
     <SUITE FILE_PATH="coverage/GraduationThesis$data_clean.coverage" NAME="data_clean Coverage Results" MODIFIED="1454346763097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraduationThesis$weighted_freq.coverage" NAME="weighted_freq Coverage Results" MODIFIED="1454760588171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraduationThesis$user_logs_count.coverage" NAME="user_logs_count Coverage Results" MODIFIED="1455695392025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GraduationThesis$cooc_diversity.coverage" NAME="cooc_diversity Coverage Results" MODIFIED="1455717644857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraduationThesis$python_test.coverage" NAME="python_test Coverage Results" MODIFIED="1455699690696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraduationThesis$coco_freq.coverage" NAME="coco_freq Coverage Results" MODIFIED="1454507772414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GraduationThesis$cooc_coef.coverage" NAME="cooc_coef Coverage Results" MODIFIED="1455716261077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -70,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/weighted_freq.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#69#100#0" expanded="true" />
               </folding>
@@ -78,13 +78,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cooc_coef.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cooc_coef.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cooc_coef.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46153846">
-              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="37" selection-end-column="17" />
               <folding>
                 <element signature="e#62#93#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cooc_diversity.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cooc_diversity.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.16783217">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding>
+                <element signature="e#60#91#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,6 +152,7 @@
         <option value="$PROJECT_DIR$/python_test.py" />
         <option value="$PROJECT_DIR$/weighted_freq.py" />
         <option value="$PROJECT_DIR$/cooc_coef.py" />
+        <option value="$PROJECT_DIR$/cooc_diversity.py" />
       </list>
     </option>
   </component>
@@ -214,25 +227,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Python.cooc_coef">
-    <configuration default="false" name="cooc_weight (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="GraduationThesis" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cooc_weight.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.cooc_diversity">
     <configuration default="false" name="weighted_freq" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -301,6 +296,24 @@
       <module name="GraduationThesis" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cooc_coef.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="cooc_diversity" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="GraduationThesis" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cooc_diversity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -499,19 +512,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.cooc_weight (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.weighted_freq" />
-      <item index="2" class="java.lang.String" itemvalue="Python.user_logs_count" />
-      <item index="3" class="java.lang.String" itemvalue="Python.python_test" />
-      <item index="4" class="java.lang.String" itemvalue="Python.cooc_coef" />
+      <item index="0" class="java.lang.String" itemvalue="Python.weighted_freq" />
+      <item index="1" class="java.lang.String" itemvalue="Python.user_logs_count" />
+      <item index="2" class="java.lang.String" itemvalue="Python.python_test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.cooc_coef" />
+      <item index="4" class="java.lang.String" itemvalue="Python.cooc_diversity" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.cooc_coef" />
-        <item index="1" class="java.lang.String" itemvalue="Python.python_test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.user_logs_count" />
-        <item index="3" class="java.lang.String" itemvalue="Python.weighted_freq" />
-        <item index="4" class="java.lang.String" itemvalue="Python.cooc_weight (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.cooc_diversity" />
+        <item index="1" class="java.lang.String" itemvalue="Python.cooc_coef" />
+        <item index="2" class="java.lang.String" itemvalue="Python.python_test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.user_logs_count" />
+        <item index="4" class="java.lang.String" itemvalue="Python.weighted_freq" />
       </list>
     </recent_temporary>
   </component>
@@ -942,7 +955,7 @@
     <entry file="file://$PROJECT_DIR$/weighted_freq.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="e#69#100#0" expanded="true" />
           </folding>
@@ -951,10 +964,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cooc_coef.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46153846">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="37" selection-end-column="17" />
           <folding>
             <element signature="e#62#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cooc_diversity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.16783217">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#60#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
