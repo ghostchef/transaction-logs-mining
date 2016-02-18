@@ -4,8 +4,35 @@ from __future__ import division
 import os
 import time
 import math
+import sys
+import xlrd
+
+reload(sys)
+sys.setdefaultencoding( "utf-8" )
+
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 
+
+file = open(data_src + 'sorted_strength/cooc-diversity.txt', 'r')
+for i in range(0, 20):
+    line = file.readline()
+    print line
+    rec = line.split(':')
+    for j in range(0, len(rec)):
+        print rec[j]
+
+
+# prof_file = data_src + "stuff/strength.xlsx"
+# data = xlrd.open_workbook(prof_file)
+# for index in range(0, 8):
+#     print "we are processing..."
+#     outfile = open(data_src + 'sorted_strength/' + str(index) + '.txt', 'w')
+#     table = data.sheets()[index]
+#     for i in range(0, table.nrows):
+#     # for i in range(0, 20):
+#         row = table.row_values(i)
+#         outfile.write(unicode(row[0]).encode('utf-8') + ':' + unicode(row[1]).encode('utf-8') + '\n')
+#     outfile.close()
 
 
 # # user log count
