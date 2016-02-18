@@ -83,6 +83,6 @@ for i in range(0, 205170):
             hit_num += 1
             break
     for point in break_point:
-        if i == point - 1:
-            rate = hit_num / point
+        if i == point/2 - 1:
+            rate = hit_num / (i+1)
             outfile.write(str(point/2) + ':' + str(rate) + '\n')
