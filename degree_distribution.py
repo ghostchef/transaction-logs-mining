@@ -6,7 +6,7 @@ from __future__ import division
 data_src = "/Users/ghostchef/data/shcool-card-data/"
 file = open(data_src + 'sorted_strength/weight-strength.txt', 'r')
 
-K = 100000
+K = 410340
 deg_dict = dict()
 
 for index in range(0, K):
@@ -19,7 +19,8 @@ for index in range(0, K):
         deg_dict[tup[0]] = 1
 file.close()
 
-outfile = open(data_src + 'degree_distribution.txt', 'w')
+# outfile = open(data_src + 'degree_distribution.txt', 'w')
+outfile = open(data_src + 'degree_distribution_all.txt', 'w')
 for k, v in deg_dict.iteritems():
     outfile.write(k + ':' + str(v) + '\n')
 outfile.close()
