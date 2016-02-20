@@ -22,16 +22,16 @@ file.close()
 
 print len(deg_dict)
 
-# dist_file = open(data_src + 'dist_all.txt', 'w')
-# outfile = open(data_src + 'deg_dst_all.txt', 'w')
-# for k, v in deg_dict.iteritems():
-#     if dist_dict.has_key(v):
-#         dist_dict[v] += 1
-#     else:
-#         dist_dict[v] = 1
-#     outfile.write(k + ':' + str(v) + '\n')
-# outfile.close()
-#
-# for k, v in dist_dict.iteritems():
-#     dist_file.write(str(k) + ':' + str(v) + '\n')
-# dist_file.close()
+dist_file = open(data_src + 'dist_all.txt', 'w')
+outfile = open(data_src + 'deg_dst_all.txt', 'w')
+for k, v in deg_dict.iteritems():
+    if dist_dict.has_key(v):
+        dist_dict[v] += 1
+    else:
+        dist_dict[v] = 1
+    outfile.write(k + ':' + str(v) + '\n')
+outfile.close()
+
+for k, v in dist_dict.iteritems():
+    dist_file.write(str(k) + ':' + str(v) + '\n')
+dist_file.close()
