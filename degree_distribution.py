@@ -8,6 +8,7 @@ file = open(data_src + 'sorted_strength/weight-strength.txt', 'r')
 
 K = 410340
 deg_dict = dict()
+dist_dict = dict()
 
 for index in range(0, K):
     line = file.readline()
@@ -19,8 +20,18 @@ for index in range(0, K):
         deg_dict[tup[0]] = 1
 file.close()
 
-# outfile = open(data_src + 'degree_distribution.txt', 'w')
-outfile = open(data_src + 'degree_distribution_all.txt', 'w')
-for k, v in deg_dict.iteritems():
-    outfile.write(k + ':' + str(v) + '\n')
-outfile.close()
+print len(deg_dict)
+
+# dist_file = open(data_src + 'dist_all.txt', 'w')
+# outfile = open(data_src + 'deg_dst_all.txt', 'w')
+# for k, v in deg_dict.iteritems():
+#     if dist_dict.has_key(v):
+#         dist_dict[v] += 1
+#     else:
+#         dist_dict[v] = 1
+#     outfile.write(k + ':' + str(v) + '\n')
+# outfile.close()
+#
+# for k, v in dist_dict.iteritems():
+#     dist_file.write(str(k) + ':' + str(v) + '\n')
+# dist_file.close()

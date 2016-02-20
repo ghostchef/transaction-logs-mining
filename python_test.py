@@ -7,19 +7,21 @@ import math
 import sys
 import xlrd
 
-reload(sys)
-sys.setdefaultencoding( "utf-8" )
-
-data_src = "/Users/ghostchef/data/shcool-card-data/"
 
 
-file = open(data_src + 'sorted_strength/cooc-diversity.txt', 'r')
-for i in range(0, 20):
-    line = file.readline()
-    print line
-    rec = line.split(':')
-    for j in range(0, len(rec)):
-        print rec[j]
+# reload(sys)
+# sys.setdefaultencoding( "utf-8" )
+#
+# data_src = "/Users/ghostchef/data/shcool-card-data/"
+#
+#
+# file = open(data_src + 'sorted_strength/cooc-diversity.txt', 'r')
+# for i in range(0, 20):
+#     line = file.readline()
+#     print line
+#     rec = line.split(':')
+#     for j in range(0, len(rec)):
+#         print rec[j]
 
 
 # prof_file = data_src + "stuff/strength.xlsx"
